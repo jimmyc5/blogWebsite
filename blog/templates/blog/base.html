@@ -1,0 +1,22 @@
+<html>
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+<head>
+    <title>
+    My Blog Website
+    </title>
+</head>
+<body class= "bg-light">
+    <header>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand mx-3" href="{% url 'blog:blogPost' %}"> My Blog Website </a>
+        </nav>
+    </header>
+    <div id="content" name="content" class="mt-5">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
