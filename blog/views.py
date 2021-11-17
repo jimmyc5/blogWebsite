@@ -5,7 +5,7 @@ from django.urls import reverse
 
 def blogPost(request):
     blog = BlogPost.objects.all()[0]
-    comments = Comment.objects.all()
+    comments = reversed(Comment.objects.all())
     return render(request, 'blog/blogPost.html', {"blog_post":blog, "comments":comments})
 # Create your views here.
 
